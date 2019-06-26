@@ -18,7 +18,8 @@ class Display extends React.Component {
     } else {
       this.setState({
         balls: 0,
-        strikes: 0
+        strikes: 0,
+        fouls: 0
       });
     }
   };
@@ -42,22 +43,23 @@ class Display extends React.Component {
     this.setState({
       balls: 0,
       strikes: 0,
-      fouls: 0
+      fouls: 0,
+      hits: this.state.hits + 1
     });
   };
 
   incrementFouls = () => {
-    this.setState({ fouls: this.state.fouls + 1 });
     if (this.state.strikes < 2) {
       this.setState({
-        ...this.state,
+        // ...this.state,
         strikes: this.state.strikes + 1
       });
     } else {
       this.setState({
-        ...this.state
+        // ...this.state
       });
     }
+    this.setState({ fouls: this.state.fouls + 1 });
   };
 
   render() {
