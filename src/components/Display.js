@@ -71,10 +71,18 @@ class Display extends React.Component {
           fouls={this.state.fouls}
           hits={this.state.hits}
         />
-        <button onClick={this.incrementBalls}>Ball</button>
-        <button onClick={this.incrementStrikes}>Strike</button>
-        <button onClick={this.incrementFouls}>Foul</button>
-        <button onClick={this.incrementHits}>Hit</button>
+        <button title="ballButton" onClick={this.incrementBalls}>
+          Ball
+        </button>
+        <button title="strikeButton" onClick={this.incrementStrikes}>
+          Strike
+        </button>
+        <button title="foulButton" onClick={this.incrementFouls}>
+          Foul
+        </button>
+        <button title="hitButton" onClick={this.incrementHits}>
+          Hit
+        </button>
       </>
     );
   }

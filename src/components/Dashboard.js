@@ -4,10 +4,10 @@ function Dashboard(props) {
   console.log(props.fouls);
   return (
     <>
-      <h2>Bals:{props.balls}</h2>
-      <h2>Strikes:{props.strikes}</h2>
-      <h2>Fouls:{props.fouls}</h2>
-      <h2>Hits:{props.hits}</h2>
+      <h2 title="ballCount">Balls:{props.balls}</h2>
+      <h2 title="strikeCount">Strikes:{props.strikes}</h2>
+      <h2 title="foulCount">Fouls:{props.fouls}</h2>
+      <h2 title="hitCount">Hits:{props.hits}</h2>
     </>
   );
 }

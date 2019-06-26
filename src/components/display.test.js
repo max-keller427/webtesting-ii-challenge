@@ -11,6 +11,7 @@ import "jest-dom/extend-expect";
 import Display from "./Display";
 
 describe("the display component", () => {
+  const display = render(<Display />);
   it("renders without crashing", () => {
     const test = render(<Display />);
   });
@@ -27,17 +28,17 @@ describe("the display component", () => {
   // });
 
   it("ball button fire = 1 ball", () => {
-    const { getByText } = render(<Display />);
-    const balls = getByText(/ball/i);
+    const ballButton = display.getByTitle("ballButton");
+    const ballCount = display.getByTitle("ballCount");
     // const strikes = getByText(/strikes/i);
 
-    fireEvent.click(ball);
+    fireEvent.click(ballButton);
     // fireEvent.click(balls);
     // fireEvent.click(balls);
     // fireEvent.click(balls);
 
     // expect(strikes).toHaveTextContent(0);
-    expect(balls).toHaveTextContent(1);
+    expect(ballCount).toHaveTextContent("1");
   });
 
   xit("3 strike = 0 strike", () => {
