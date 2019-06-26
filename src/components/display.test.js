@@ -15,29 +15,29 @@ describe("the display component", () => {
     const test = render(<Display />);
   });
 
-  it("initializes all fields with 0", () => {
-    const { queryByText } = render(<Display />);
+  // it("initializes all fields with 0", () => {
+  //   const { queryByText } = render(<Display />);
 
-    const balls = queryByText(/balls/i);
-    // const strikes = getByText(/strikes/i);
-    // const fouls = getByText(/fouls/i);
-    // const hits = getByText(/hits/i);
+  //   const balls = queryByText(/balls/i);
+  //   // const strikes = getByText(/strikes/i);
+  //   // const fouls = getByText(/fouls/i);
+  //   // const hits = getByText(/hits/i);
 
-    expect(balls).toEqual(0);
-  });
+  //   expect(balls).toEqual(<h2>Balls:0</h2>);
+  // });
 
-  xit("4 balls = 0 strikes", () => {
+  it("ball button fire = 1 ball", () => {
     const { getByText } = render(<Display />);
-    const balls = getByText(/balls/i);
-    const strikes = getByText(/strikes/i);
+    const balls = getByText(/ball/i);
+    // const strikes = getByText(/strikes/i);
 
-    fireEvent.click(balls);
-    fireEvent.click(balls);
-    fireEvent.click(balls);
-    fireEvent.click(balls);
+    fireEvent.click(ball);
+    // fireEvent.click(balls);
+    // fireEvent.click(balls);
+    // fireEvent.click(balls);
 
-    expect(strikes).toHaveTextContent(0);
-    expect(balls).toHaveTextContent(0);
+    // expect(strikes).toHaveTextContent(0);
+    expect(balls).toHaveTextContent(1);
   });
 
   xit("3 strike = 0 strike", () => {
