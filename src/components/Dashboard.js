@@ -1,13 +1,20 @@
 import React from "react";
 
 function Dashboard(props) {
-  console.log(props.fouls);
   return (
     <>
-      <h2 title="ballCount">Balls:{props.balls}</h2>
-      <h2 title="strikeCount">Strikes:{props.strikes}</h2>
-      <h2 title="foulCount">Fouls:{props.fouls}</h2>
-      <h2 title="hitCount">Hits:{props.hits}</h2>
+      <button title="ballButton" onClick={props.incrementBalls}>
+        Ball
+      </button>
+      <button title="strikeButton" onClick={props.incrementStrikes}>
+        Strike
+      </button>
+      <button title="foulButton" onClick={props.incrementFouls}>
+        Foul
+      </button>
+      <button title="hitButton" onClick={props.incrementHits}>
+        Hit
+      </button>
     </>
   );
 }

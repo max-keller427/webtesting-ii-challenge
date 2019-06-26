@@ -3,28 +3,26 @@ import {
   render,
   fireEvent,
   queryByAltText,
-  queryByText
+  queryByText,
+  getByTitle
 } from "@testing-library/react";
 import "@testing-library/react/cleanup-after-each";
 import "jest-dom/extend-expect";
 
-import Dashboard from "./Dashboard";
+import Display from "./Display";
 
-describe("The dashboard component", () => {
-  it("renders", () => {
-    const test = render(<Dashboard />);
+describe("the display component", () => {
+  const display = render(<Display />);
+
+  it("renders without crashing", () => {
+    const test = render(<Display />);
   });
 
-  it("shows all fields", () => {
-    const { queryByText } = render(<Dashboard />);
-    const balls = queryByText(/balls/i);
-    const strikes = queryByText(/strikes/i);
-    const fouls = queryByText(/fouls/i);
-    const hits = queryByText(/hits/i);
-
-    expect(balls).toBeInTheDocument();
-    expect(strikes).toBeInTheDocument();
-    expect(fouls).toBeInTheDocument();
-    expect(hits).toBeInTheDocument();
+  describe("if the buttons work", () => {
+    test("the ball button", () => {
+      const ballButton = display.getByTitle("ballButton");
+      fireEvent.click(ballButton);
+      const ballCount = 
+    });
   });
 });
