@@ -21,4 +21,26 @@ it("renders without crashing", () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-describe("The App Component", () => {});
+describe("The App Component", () => {
+  const app = render(<App />);
+  const display = render(<Display />);
+  const dashboard = render(<Dashboard />);
+
+  it("exists", () => {
+    expect(app).toBeTruthy();
+  });
+
+  it("contains both sub-components", () => {
+    expect(display).toBeTruthy();
+    expect(dashboard).toBeTruthy();
+  });
+
+  describe("if the buttons work correctly", () => {
+    test("ball button", () => {
+      const ballButton = dashboard.getByTitle("ballButton");
+      fireEvent.click(ballButton);
+      const ballCount = display.getByTitle("ballCount");
+      expect(ballCount).toHaveTextContent("1");
+    });
+  });
+});
