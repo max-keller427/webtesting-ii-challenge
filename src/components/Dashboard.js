@@ -1,13 +1,13 @@
 import React from "react";
 
 function Dashboard(props) {
-  console.log(props);
+  console.log(props.fouls);
   return (
     <>
       <h2>Balls:{props.balls}</h2>
       <h2>Strikes:{props.strikes}</h2>
-      <h2>Fouls:{props.Fouls}</h2>
-      <h2>Hits:{props.Hits}</h2>
+      <h2>Fouls:{props.fouls}</h2>
+      <h2>Hits:{props.hits}</h2>
     </>
   );
 }
