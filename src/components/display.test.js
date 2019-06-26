@@ -11,26 +11,19 @@ import "jest-dom/extend-expect";
 import Display from "./Display";
 
 describe("the display component", () => {
-  xit("renders without crashing", () => {
-    const render = render(<Display />);
+  it("renders without crashing", () => {
+    const test = render(<Display />);
   });
 
-  xit("displays strikes", () => {
-    const { getByText } = render(<Display />);
-    const strikes = getByText(/strikes/i);
+  it("initializes all fields with 0", () => {
+    const { queryByText } = render(<Display />);
 
-    fireEvent.click(strikes);
+    const balls = queryByText(/balls/i);
+    // const strikes = getByText(/strikes/i);
+    // const fouls = getByText(/fouls/i);
+    // const hits = getByText(/hits/i);
 
-    expect(strikes).toHaveTextContent(1);
-  });
-
-  xit("displays balls", () => {
-    const { getByText } = render(<Display />);
-    const balls = getByText(/balls/i);
-
-    fireEvent.click(balls);
-
-    expect(balls).toHaveTextContent(1);
+    expect(balls).toEqual(0);
   });
 
   xit("4 balls = 0 strikes", () => {
